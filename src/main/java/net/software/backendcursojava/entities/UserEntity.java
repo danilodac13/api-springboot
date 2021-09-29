@@ -1,22 +1,35 @@
-package net.software.backendcursojava.shared.dto;
+package net.software.backendcursojava.entities;
 
 import java.io.Serializable;
 
-public class UserDTO implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "users")
+public class UserEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue
     private long id;
-    private String userId;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
-    private String encryptedPassword;
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+    @Column(nullable = false)
+    private String userId;
+
+    @Column(nullable = false, length = 50)
+    private String firstName;
+
+    @Column(nullable = false, length = 50)
+    private String lastName;
+
+    @Column(nullable = false, length = 255)
+    private String email;
+
+    @Column(nullable = false)
+    private String encryptedPassword;
 
     public long getId() {
         return id;
@@ -56,14 +69,6 @@ public class UserDTO implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEncryptedPassword() {

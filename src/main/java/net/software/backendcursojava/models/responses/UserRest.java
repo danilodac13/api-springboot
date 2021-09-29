@@ -3,7 +3,7 @@ package net.software.backendcursojava.models.responses;
 public class UserRest {
 
     private String userId;
-    private String firtsname;
+    private String firstName;
     private String lastName;
     private String email;
 
@@ -15,12 +15,12 @@ public class UserRest {
         this.userId = userId;
     }
 
-    public String getFirtsname() {
-        return firtsname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirtsname(String firtsname) {
-        this.firtsname = firtsname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -38,4 +38,5 @@ public class UserRest {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
